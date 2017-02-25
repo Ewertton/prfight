@@ -20,7 +20,7 @@ div#interface{
     line-height:0
 }
 body:after{
-    content:url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
+    content:url(../public/img/close.png) url(../public/img/loading.gif) url(../public/img/prev.png) url(../public/img/next.png);
     display:none
 }
 .lb-dataContainer:after,.lb-outerContainer:after{
@@ -84,7 +84,7 @@ body.lb-disable-scrolling{
     width:32px;
     height:32px;
     margin:0 auto;
-    background:url(../images/loading.gif) no-repeat
+    background:url(../public/img/loading.gif) no-repeat
 }
 .lb-nav{
     top:0;
@@ -107,7 +107,7 @@ body.lb-disable-scrolling{
     width:34%;
     left:0;
     float:left;
-    background:url(../images/prev.png) left 48% no-repeat;
+    background:url(../public/img/prev.png) left 48% no-repeat;
     filter:alpha(Opacity=0);
     opacity:0;
     -webkit-transition:opacity .6s;
@@ -123,7 +123,7 @@ body.lb-disable-scrolling{
     width:64%;
     right:0;
     float:right;
-    background:url(../images/next.png) right 48% no-repeat;
+    background:url(../public/img/next.png) right 48% no-repeat;
     filter:alpha(Opacity=0);
     opacity:0;
     -webkit-transition:opacity .6s;
@@ -176,7 +176,7 @@ body.lb-disable-scrolling{
     float:right;
     width:30px;
     height:30px;
-    background:url(../images/close.png) top right no-repeat;
+    background:url(../public/img/close.png) top right no-repeat;
     text-align:right;
     outline:0;
     filter:alpha(Opacity=70);
@@ -288,7 +288,7 @@ figure.foto img{
     line-height:0
 }
 body:after{
-    content:url(../../images/close.png) url(../../images/loading.gif) url(../../images/prev.png) url(../../images/next.png);
+    content:url(../../public/img/close.png) url(../../public/img/loading.gif) url(../../public/img/prev.png) url(../../public/img/next.png);
     display:none
 }
 .lb-dataContainer:after,.lb-outerContainer:after{
@@ -352,7 +352,7 @@ body.lb-disable-scrolling{
     width:32px;
     height:32px;
     margin:0 auto;
-    background:url(../../images/loading.gif) no-repeat
+    background:url(../../public/img/loading.gif) no-repeat
 }
 .lb-nav{
     top:0;
@@ -375,7 +375,7 @@ body.lb-disable-scrolling{
     width:34%;
     left:0;
     float:left;
-    background:url(../../images/prev.png) left 48% no-repeat;
+    background:url(../../public/img/prev.png) left 48% no-repeat;
     filter:alpha(Opacity=0);
     opacity:0;
     -webkit-transition:opacity .6s;
@@ -391,7 +391,7 @@ body.lb-disable-scrolling{
     width:64%;
     right:0;
     float:right;
-    background:url(../../images/next.png) right 48% no-repeat;
+    background:url(../../public/img/next.png) right 48% no-repeat;
     filter:alpha(Opacity=0);
     opacity:0;
     -webkit-transition:opacity .6s;
@@ -444,7 +444,7 @@ body.lb-disable-scrolling{
     float:right;
     width:30px;
     height:30px;
-    background:url(../../images/close.png) top right no-repeat;
+    background:url(../../public/img/close.png) top right no-repeat;
     text-align:right;
     outline:0;
     filter:alpha(Opacity=70);
