@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 25, 2017 at 09:38 PM
+-- Generation Time: Feb 25, 2017 at 10:13 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -31,14 +31,6 @@ CREATE TABLE `login_attempts` (
   `user_id` int(11) NOT NULL,
   `created_alt` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `login_attempts`
---
-
-INSERT INTO `login_attempts` (`id`, `user_id`, `created_alt`) VALUES
-(1, 1, '2017-02-25 20:37:56'),
-(2, 1, '2017-02-25 20:38:02');
 
 -- --------------------------------------------------------
 
@@ -84,20 +76,21 @@ CREATE TABLE `users` (
   `cpf` int(11) NOT NULL,
   `faixa` varchar(45) DEFAULT NULL,
   `username` varchar(45) NOT NULL,
-  `password` varchar(125) NOT NULL,
+  `password` varchar(256) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `salt` varchar(125) NOT NULL,
+  `salt` varchar(256) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `descricao` varchar(500) DEFAULT NULL,
-  `roles_id` int(11) DEFAULT NULL
+  `roles_id` int(11) DEFAULT NULL,
+  `image` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `name`, `cpf`, `faixa`, `username`, `password`, `email`, `salt`, `status`, `descricao`, `roles_id`) VALUES
-(1, 'ewertton', 0, 'Branca 7 Kyu', 'ewertton', '4365e1499c51c3cdb89092d32120bbe5016097c313967b819fb4e1472ae4776ee38ef1ff392d3fa7be92618c06e65ca247d567442995864589c1e477c99fd', 'ewertton.klaytton@hotmail.com', 'f969577fa996dac2f4556badb62a1dad290c5a8b07c3371368448dac36e26f92f6d6ee005d9dc4b106a9db8bb1e8384165e05824183e93463e141c84fc7c8', 1, '                              ee', 1);
+INSERT INTO `users` (`user_id`, `name`, `cpf`, `faixa`, `username`, `password`, `email`, `salt`, `status`, `descricao`, `roles_id`, `image`) VALUES
+(1, 'ewertton', 0, 'Branca 7 Kyu', 'ewertton', '0672a1289b2a882c2bc979ab02ca5aa2d147894842cb79710c931d91db2c6dfbb272823bc932129132c3ac75c9b2ad8b8c486254adbef0fb875acbc70712e62b', 'ewertton.klaytton@hotmail.com', '375ccbc1ee974652d0c9bab58da763197430a9d3422d825acf6b8f06fbf9f34a01dcf0785aa30b4a4afcf71b5b06cf15911b04300ac385eae5889049c0a40c22', 1, '                              ', 1, '');
 
 --
 -- Indexes for dumped tables
@@ -138,7 +131,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `recoveries`
 --
