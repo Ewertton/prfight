@@ -1,0 +1,64 @@
+<div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-custom">
+                <div class="panel-body">
+	        <?php echo (isset($this->alert) ? $this->alert : '');
+	        	
+	        	$values = [
+			'name' => $view_user->name,
+			'username' => $view_user->username,
+			'email' => $view_user->email,
+			'faixa' => $view_user->faixa,
+			'descricao' => $view_user->descricao,
+			'status'	=>$view_user->status
+
+		];
+	        	Form::open('editarperfil',$values, [
+	        		'action'=>BASE.'usuarios/bloqueados',]);
+			echo "<legend>Informaçoes da Conta</legend>";
+
+	        	Form::Textbox('Nome:', 'name',['required'=>1]);
+
+	        	Form::Textbox('Login:', 'username',['required'=>1]);
+
+	        	Form::Email('E-mail:', 'email',['required'=>1]);
+
+				$options = ["Branca 7 Kyu", 
+							"Amarela 6 Kyu",
+							"Vermelha 5 Kyu",
+							"Laranja 4 Kyu",
+							"Verde 3 Kyu",
+							"Roxa 2 Kyu",
+							"Marrom 1 Kyu",
+							"Preta 1 Dan",
+							"Preta 2 Dan",
+							"Preta 3 Dan",
+							"Preta 4 Dan",
+							"Preta 5 Dan",
+							"Preta 6 Dan",
+							"Preta 7 Dan",
+							"Preta 8 Dan",
+							"Preta 9 Dan",
+							"Preta 10 Dan",
+							];
+
+        		Form::Select("Faixa", "faixa", $options);
+
+        			$status = ["0", 
+							   "1",];
+
+        		Form::Select("Status:", "status", $status);
+
+	        	Form::Password('Senha(caso deseje alterar):', 'password');
+
+	        	Form::Textarea('Descrição:', 'descricao');
+	        	
+	        	form::Button('Atualizar','submit', ['class'=>'btn btn-success','style'=>'width: 100%']);
+	        		
+	        	Form::close(false);
+
+	         ?>
+				</div>
+			</div>
+		</div>
+	</div>

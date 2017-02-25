@@ -1,0 +1,99 @@
+
+ <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-custom">
+                <div class="panel-body">
+                    <?php echo (isset($this->alert) ? $this->alert : ''); ?>
+                        <form class="form-horizontal" action="<?php echo BASE; ?>cadastro/cadastrar/" 
+                        method="post">
+
+                        <fieldset id="usuario"><legend>Dados Pessoais</legend>
+                          <div class="form-group">
+                            <label for="name" class="col-sm-3 control-label">Nome Completo:</label>
+                            <div class="col-sm-8">
+                              <input required="" type="text" value="<?php echo $this->request->post('name')?>" class="form-control" name="name" id="name" placeholder="Nome Completo">
+                            </div>
+                          </div>
+                       <!--    <div class="form-group">
+                            <label for="cpf" class="col-sm-3 control-label">Cpf:</label>
+                            <div class="col-sm-8">
+                              <input required="" type="text" value="<?php echo $this->request->post('cpf')?>"class="form-control" name="cpf" id="cpf" placeholder="123456789-12">
+                            </div>
+                          </div> -->
+                          </fieldset>
+
+                          <fieldset id="Login"><legend>Informaçoes de Conta</legend>
+
+                          <div class="form-group">
+                            <label for="email" class="col-sm-3 control-label">E-mail:</label>
+                            <div class="col-sm-8">
+                              <input required="" type="text" class="form-control" value="<?php echo $this->request->post('email')?>" name="email" id="email" placeholder="exemplo@exemplo.com">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="username" class="col-sm-3 control-label">Nome de Usuario:</label>
+                            <div class="col-sm-8">
+                              <input required="" type="text" value="<?php echo $this->request->post('username') ?>" class="form-control" name="username" id="username" placeholder="exemplo">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Senha:</label>
+                            <div class="col-sm-8">
+                              <input required="" " type="password" class="form-control" name="password" id="password" placeholder="senha">
+                            </div>
+                          </div>
+                          </fieldset>
+
+                            <fieldset id="adicionais"><legend>Informaçoes Adicionais</legend>
+                          <div class="form-group">
+                            <label for="faixa"  class="col-sm-3 control-label">Cor da Faixa:</label>
+                            <div class="col-sm-8">
+                             <select class="form-control" name="faixa">
+                               <optgroup label="Kyu">
+                                   <option>Branca 7 Kyu</option>
+                                   <option>Amarela 6 Kyu</option>
+                                   <option>Vermelha 5 Kyu</option>
+                                   <option>Laranja 4 Kyu</option>
+                                   <option>Verde 3 Kyu</option>
+                                   <option>Roxa 2 Kyu</option>
+                                   <option>Marrom 1 Kyu</option>
+                               </optgroup>
+                             <optgroup label="Dan">
+                                   <option>Preta 1 Dan</option>
+                                   <option>Preta 2 Dan</option>
+                                   <option>Preta 3 Dan</option>
+                                   <option>Preta 4 Dan</option>
+                                   <option>Preta 5 Dan</option>
+                                   <option>Preta 6 Dan</option>
+                                   <option>Preta 7 Dan</option>
+                                   <option>Preta 8 Dan</option>
+                                   <option>Preta 9 Dan</option>
+                                   <option>Preta 10 Dan</option>
+                             </optgroup>
+                            </select>
+                            </div>
+                          </div>
+                            
+                            <div class="form-group">
+                            <label for="descicao" class="col-sm-3 control-label">Descrição:</label>
+                            <div class="col-sm-8">
+                            <textarea type="textarea" required="" value="<?php echo $this->request->post('descricao')?>" class="form-control" name="descricao" id="descricao" required="" placeholder="Uma pequena descrição pessoal">
+                              </textarea>
+                            </div>
+                          </div>
+
+                          </fieldset>
+                          <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-10">
+                              <button type="submit" class="btn btn-success">Cadastrar</button>
+                            </div>
+                          </div>
+                        </form>
+
+                       
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,54 @@
+<div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-custom">
+				<div class="panel-body">
+				  <?php echo isset($this->menu) ? $this->menu->getMenu() : '';?>
+					<table class="table table-bordered">
+
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Faixa</th>
+								<th>Login</th>
+								<th>Ações</th>
+							</tr>
+						</thead>
+
+						<tbody>	
+
+						<?php if ($view_users): 
+
+								foreach ($view_users as $user) : 
+						?>
+								<tr>
+								<td><?php echo $user->name; ?></td>
+								<td><?php echo $user->faixa; ?></td>
+								<td><?php echo $user->username; ?></td>
+								<td>
+								<?php if ($user->status==0) :?>
+									<a href="<?php echo BASE.'usuarios/desbloquear/'.$user->id; ?>" class="btn btn-danger btn-xs">
+								<i class="fa fa-lock"><span></span></i>
+								<?php else: ?>
+									<a href="<?php echo BASE.'usuarios/bloquear/'.$user->id; ?>" class="btn btn-success btn-xs">
+								<i class="fa fa-unlock"><span></span></i>
+								<?php endif; ?>
+								<a href="<?php echo BASE.'usuarios/excluir/'.$user->id; ?>" class="btn btn-warning btn-xs">
+								<i class="fa fa-trash"><span></span></i>
+								</a>
+								</td>
+
+									
+								</tr>
+						<?php
+								endforeach;
+							 endif; 
+
+							 ?>
+						</tbody>
+
+					</table>
+
+				</div>
+			</div>
+		</div>
+</div>
