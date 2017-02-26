@@ -30,4 +30,5 @@ class IndexController extends \HXPHP\System\Controller {
 	public function alunosAction() {
 		$this->view->setFile('alunos');
 	}
+	
 }

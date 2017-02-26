@@ -1,50 +1,44 @@
-<div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-custom">
-				<div class="panel-body">
-					<table class="table table-bordered">
 
-						<thead>
-							<tr>
-								<th>Nome</th>
-								<th>Faixa</th>
-								<th>foto</th>
-								<th>descrição</th>
-							</tr>
-						</thead>
-
-						<tbody>	
-
-						<?php if ($view_users): 
-
-								foreach ($view_users as $user) : 
-						?>	
-								<?php if ($user->status==1): ?>
-								<tr>
-								<td><?php echo $user->name; ?></td>
-								<td><?php echo $user->faixa; ?></td>
-								<td>
-								<figure class="foto-perfil">
-								<a class="example-image-link" href="../public/uploads/users/<?php echo $user->name; ?>/<?php echo $user->image; ?>" data-lightbox="example-1"  data-lightbox="example-set" data-title="<?php echo $user->name; echo " "; echo $user->faixa;?>">
           
-                    			   <img class="example-image" src="../public/uploads/users/<?php echo $user->name; ?>/<?php echo $user->image; ?>"/>									
-								</figure>
-                    			</td>
-                    			<td><?php echo $user->descricao; ?></td>
-												
-								</tr>
-								<?php endif; ?>
-								
-						<?php
-								endforeach;
-							 endif; 
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
 
-							 ?>
-						</tbody>
+          <a data-toggle="collapse" href="#collapse1"> Alunos </a>
+           </h4>
+             </div>
+            
+                <div id="collapse1" class="panel-collapse collapse ">
 
-					</table>
+                <?php if ($view_users): 
 
-				</div>
-			</div>
-		</div>
+                foreach ($view_users as $user) : 
+            ?>  <?php if ($user->status==1): ?>
+                    <div class="panel-group" id="<?php echo $user->id; ?>">             
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                           <a data-toggle="collapse" data-parent="#<?php echo $user->id; ?>"  href="#<?php echo $user->name; ?>"><?php echo $user->name; ?> Faixa <?php echo $user->faixa; ?></a>
+                             </h4>
+                          </div>
+                        <div id="<?php echo $user->name; ?>" class="panel-collapse collapse">
+                     <figure class="foto-perfil">
+                <a class="example-image-link" href="../public/uploads/users/<?php echo $user->name; ?>/<?php echo $user->image; ?>" data-lightbox="example-1"  data-lightbox="example-set" data-title="<?php echo $user->name; echo " "; echo $user->faixa;?>">
+          
+                             <img class="example-image" src="../public/uploads/users/<?php echo $user->name; ?>/<?php echo $user->image; ?>"/>                  
+                </figure>
+            </div>
+         </div> 
+        </div> 
+        <?php 
+            endif; 
+        ?>     
+            <?php
+                endforeach;
+               endif; 
+             ?>   
+     </div>
+     
+   </div>
 </div>
