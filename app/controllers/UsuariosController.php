@@ -25,19 +25,15 @@ class UsuariosController extends \HXPHP\System\Controller {
 			$role->role
 		);
 
-		$user_id = $this->auth->getUserId();
-
 		$this->view->setTitle('PR Fight')->setVars([
 				'user'  => User::find($user_id),
 				'users' => User::all()]);
 
 	}
 
-	public function bloqueadosAction() {
-
-		$this->view->setFile('index');
-	}
-	public function bloquearAction($user_id = null) {
+	
+		public function bloquearAction($user_id = null) {
+		
 		$this->view->setFile('index');
 		if (is_numeric($user_id)) {
 			$user = User::find_by_id($user_id);
@@ -48,7 +44,9 @@ class UsuariosController extends \HXPHP\System\Controller {
 			}
 		}
 	}
+			
 	public function desbloquearAction($user_id = null) {
+		
 		$this->view->setFile('index');
 		if (is_numeric($user_id)) {
 			$user = User::find_by_id($user_id);

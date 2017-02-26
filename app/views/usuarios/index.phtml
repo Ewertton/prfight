@@ -25,7 +25,7 @@
 								<td><?php echo $user->faixa; ?></td>
 								<td><?php echo $user->username; ?></td>
 								<td>
-								<?php if ($user->status==0) :?>
+								<?php if ($user->status===0) :?>
 									<a href="<?php echo BASE.'usuarios/desbloquear/'.$user->id; ?>" class="btn btn-danger btn-xs">
 								<i class="fa fa-lock"><span></span></i>
 								<?php else: ?>

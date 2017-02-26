@@ -159,7 +159,7 @@ class User extends \HXPHP\System\Model {
 			if ($user->status === 1) {
 
 				if (LoginAttempt::TentativasExistente($user->id)) {
-					var_dump($password);
+					
 
 					if ($password['password'] === $user->password) {
 
